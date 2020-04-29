@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { loadStats } from "../api";
+import { formatDate } from "../utils/dates";
 
 const YEAR = "2019";
 const MONTH = "10";
 
-const toDate = day => `${YEAR}-${MONTH}-${day}`;
+const toDates = ({ from, to }) => ({
+  from: formatDate(YEAR, MONTH, from),
+  to: formatDate(YEAR, MONTH, to),
+});
 
 const useStats = (userId, defaultFrom, defaultTo) => {
   const [loading, setLoading] = useState(false);
@@ -19,7 +23,11 @@ const useStats = (userId, defaultFrom, defaultTo) => {
     try {
       setLoading(true);
 
-      const data = await loadStats(userId, toDate(range.from), toDate(range.to));
+      const data = await loadStats(
+        userId,
+        formatDate(YEAR, MONTH, range.from),
+        formatDate(YEAR, MONTH, range.to)
+      );
 
       setLoading(false);
       setError(null);
@@ -40,6 +48,8 @@ const useStats = (userId, defaultFrom, defaultTo) => {
     data,
 
     range,
+
+    dates: toDates(range),
   };
 
   return [state, setRange];

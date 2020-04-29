@@ -6,8 +6,12 @@ import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
 import RangeSelector from "../components/range/RangeSelector";
 import Breadcrumbs from "../components/navigation/Breadcrums";
+import Graph from "../components/graph/Graph";
 
 const userName = ({ first_name, last_name }) => `${first_name} ${last_name}`;
+
+const toClicks = records => records.map(({ date, clicks }) => ({ date, value: clicks }));
+const toViews = records => records.map(({ date, views }) => ({ date, value: views }));
 
 const UserDetails = ({
   match: {
@@ -45,7 +49,23 @@ const UserDetails = ({
 
         <h3>Clicks</h3>
 
+        {(stats.data.length > 0) && (
+          <Graph
+            data={toClicks(stats.data)}
+            startDate={stats.dates.from}
+            endDate={stats.dates.to}
+          />
+        )}
+
         <h3>Views</h3>
+
+        {(stats.data.length > 0) && (
+          <Graph
+            data={toViews(stats.data)}
+            startDate={stats.dates.from}
+            endDate={stats.dates.to}
+          />
+        )}
 
         <RangeSelector
           min={1}
