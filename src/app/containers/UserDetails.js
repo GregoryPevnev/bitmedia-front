@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useDetails from "../hooks/detailsHook";
 import useStats from "../hooks/statsHook";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
 import RangeSelector from "../components/range/RangeSelector";
+import Breadcrumbs from "../components/navigation/Breadcrums";
 
 const userName = ({ first_name, last_name }) => `${first_name} ${last_name}`;
 
@@ -17,8 +19,6 @@ const UserDetails = ({
   const details = useDetails(id);
   const [stats, setRange] = useStats(id, 24, 30);
 
-  console.log(stats.data);
-
   if (details.loading)
     return (
       // TODO: Center
@@ -30,10 +30,18 @@ const UserDetails = ({
   if (details.error)
     return <Error>{details.error}</Error>
 
-  if (details.user)
+  if (details.user) {
+    const name = userName(details.user);
+
     return (
       <div>
-        <h2>{userName(details.user)}</h2>
+        <Breadcrumbs>
+          <Link to="/">Main Page</Link>
+          <Link to="/users">User Statistics</Link>
+          <Link to={`/users/${id}`}>{name}</Link>
+        </Breadcrumbs>
+
+        <h2>{name}</h2>
 
         <h3>Clicks</h3>
 
@@ -48,6 +56,7 @@ const UserDetails = ({
         />
       </div>
     );
+  }
 
   return null;
 };

@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import usePages from "../hooks/pagesHook";
 import Table from "../components/table/Table";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
 import Pager from "../components/pager/Pager";
+import Breadcrumbs from "../components/navigation/Breadcrums";
 import { queryParams } from "../utils";
 
 const UsersTable = ({
@@ -19,6 +21,11 @@ const UsersTable = ({
 
   return (
     <div>
+      <Breadcrumbs>
+        <Link to="/">Main Page</Link>
+        <Link to="/users">User Statistics</Link>
+      </Breadcrumbs>
+
       <h2>Users</h2>
 
       <div>
