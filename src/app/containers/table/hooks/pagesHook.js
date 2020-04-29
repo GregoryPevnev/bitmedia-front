@@ -33,7 +33,7 @@ const usePages = page => {
   };
 
   useEffect(() => {
-    loadPage(page)
+    loadPage(page);
   }, [page]);
 
   return {

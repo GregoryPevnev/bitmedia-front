@@ -1,5 +1,5 @@
 import React from "react";
-import usePages from "./hooks/pages-hook";
+import usePages from "./hooks/pagesHook";
 import Table from "./components/Table";
 import Loading from "../../components/common/Loading";
 import Error from "../../components/common/Error";
