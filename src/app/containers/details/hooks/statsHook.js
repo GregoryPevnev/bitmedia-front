@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react";
 import { loadStats } from "../../../api";
 
-const useStats = userId => {
+const YEAR = "2019";
+const MONTH = "10";
+
+const toDate = day => `${YEAR}-${MONTH}-${day}`;
+
+const useStats = (userId, defaultFrom, defaultTo) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [stats, setStats] = useState([]);
+  const [data, setData] = useState([]);
+  const [range, setRange] = useState({
+    from: defaultFrom,
+    to: defaultTo,
+  });
 
-  const loadStatistic = async userId => {
+  const loadStatistic = async () => {
     try {
       setLoading(true);
 
-      const newStats = await loadStats(userId);
+      const data = await loadStats(userId, toDate(range.from), toDate(range.to));
 
       setLoading(false);
       setError(null);
-      setStats(newStats);
+      setData(data);
     } catch (e) {
       setLoading(false);
       setError(e.message);
@@ -22,14 +31,18 @@ const useStats = userId => {
   };
 
   useEffect(() => {
-    loadStatistic(userId);
-  }, [userId]);
+    loadStatistic();
+  }, [range]);
 
-  return {
+  const state = {
     loading,
     error,
-    stats,
+    data,
+
+    range,
   };
+
+  return [state, setRange];
 };
 
 export default useStats;

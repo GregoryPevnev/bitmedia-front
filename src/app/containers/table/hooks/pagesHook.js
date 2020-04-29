@@ -9,7 +9,7 @@ const usePages = page => {
   const [pages, setPages] = useState(0);
   const [users, setUsers] = useState([]);
 
-  const loadPage = async page => {
+  const loadPage = async () => {
     try {
       setLoading(true);
 
@@ -33,7 +33,7 @@ const usePages = page => {
   };
 
   useEffect(() => {
-    loadPage(page);
+    loadPage();
   }, [page]);
 
   return {
