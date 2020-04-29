@@ -1,10 +1,10 @@
 import React from "react";
-import usePages from "./hooks/pagesHook";
-import Table from "../../components/table/Table";
-import Loading from "../../components/common/Loading";
-import Error from "../../components/common/Error";
-import Pager from "../../components/pager/Pager";
-import queryParams from "../../utils/queryParams";
+import usePages from "../hooks/pagesHook";
+import Table from "../components/table/Table";
+import Loading from "../components/common/Loading";
+import Error from "../components/common/Error";
+import Pager from "../components/pager/Pager";
+import { queryParams } from "../utils";
 
 const UsersTable = ({
   location: { search },

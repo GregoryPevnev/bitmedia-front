@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { loadStats } from "../../../api";
+import { loadStats } from "../api";
 
 const YEAR = "2019";
 const MONTH = "10";

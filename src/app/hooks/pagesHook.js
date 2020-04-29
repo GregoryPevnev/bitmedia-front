@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { loadUsers } from "../../../api";
+import { loadUsers } from "../api";
 
 const usePages = page => {
   // Loaded - Set after initial loading (Specifies that number of pages and initial users have been loaded)

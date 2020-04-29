@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { loadUser } from "../../../api";
+import { loadUser } from "../api";
 
 const useDetails = userId => {
   const [loading, setLoading] = useState(false);

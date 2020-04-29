@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Page from "./layout/Page";
-import Home from "./containers/home/Home";
-import Table from "./containers/table/UsersTable";
-import Details from "./containers/details/UserDetails";
+import Home from "./containers/Home";
+import Table from "./containers/UsersTable";
+import Details from "./containers/UserDetails";
 
 const App = () => (
   <Page>

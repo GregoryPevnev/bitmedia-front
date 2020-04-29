@@ -6,7 +6,7 @@ const combineParams = (params, name, value) => {
   return [params[name], value];
 };
 
-const queryParams = (query, params) => {
+export const queryParams = (query, params) => {
   const paramValues = query.slice(1).split("&").reduce((values, param) => {
     const [name, value] = param.split("=");
 
@@ -21,5 +21,3 @@ const queryParams = (query, params) => {
     [param]: paramValues[param] || null,
   }), {});
 };
-
-export default queryParams;

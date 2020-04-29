@@ -1,9 +1,9 @@
 import React from "react";
-import useDetails from "./hooks/detailsHook";
-import useStats from "./hooks/statsHook";
-import Loading from "../../components/common/Loading";
-import Error from "../../components/common/Error";
-import RangeSelector from "../../components/range/RangeSelector";
+import useDetails from "../hooks/detailsHook";
+import useStats from "../hooks/statsHook";
+import Loading from "../components/common/Loading";
+import Error from "../components/common/Error";
+import RangeSelector from "../components/range/RangeSelector";
 
 const userName = ({ first_name, last_name }) => `${first_name} ${last_name}`;
 
