@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "./Row";
 
-const Table = ({ users }) => (
+const Table = ({ users, onSelect }) => (
   <table>
     <thead>
       <tr>
@@ -16,7 +16,15 @@ const Table = ({ users }) => (
       </tr>
     </thead>
     <tbody>
-      {users.map(user => <Row key={user.id} {...user} />)}
+      {users.map(user => (
+        <Row
+          key={user.id}
+          onSelect={() => onSelect(user.id)}
+          {...user}
+        />
+      ))}
     </tbody>
   </table>
 );
+
+export default Table;
