@@ -10,7 +10,11 @@ export const loadUsers = async page => {
       }
     });
 
-    return data.users || [];
+    return {
+      users: data.users,
+      page: data.page,
+      pages: data.pages,
+    };
   } catch (e) {
     throw { message: "Could not load users" };
   }

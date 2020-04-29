@@ -5,7 +5,7 @@ const BASE_URL = String(process.env.REACT_APP_API_URL);
 
 const client = axios.create({
   baseURL: BASE_URL,
-  timeout: 3
+  timeout: 3000
 });
 
 export default client;

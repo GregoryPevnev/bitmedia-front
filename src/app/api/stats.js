@@ -1,6 +1,6 @@
 import client from "./client";
 
-export const loadStats = userId => {
+export const loadStats = async userId => {
   try {
     const { data } = await client.get(`/users/${userId}`);
 
