@@ -1,0 +1,13 @@
+.header {
+  background: $primary;
+  color: $white;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: lighter;
+  }
+}
