@@ -19,8 +19,9 @@
   &__features {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     @include container;
+    margin-bottom: 3.2rem;
   }
 
   &__feature {
