@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useDetails from "../hooks/detailsHook";
 import useStats from "../hooks/statsHook";
+import Page from "../layout/Page";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
 import RangeSelector from "../components/range/RangeSelector";
@@ -38,7 +39,7 @@ const UserDetails = ({
     const name = userName(details.user);
 
     return (
-      <div>
+      <Page>
         <Breadcrumbs>
           <Link to="/">Main Page</Link>
           <Link to="/users">User Statistics</Link>
@@ -74,7 +75,7 @@ const UserDetails = ({
           to={stats.range.to}
           onSelect={setRange}
         />
-      </div>
+      </Page>
     );
   }
 

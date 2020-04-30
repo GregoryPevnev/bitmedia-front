@@ -1,3 +1,7 @@
+$lg-breakpoint: 1024px;
+$md-breakpoint: 788px;
+$sm-breakpoint: 560px;
+
 * {
   margin: 0;
   padding: 0;
@@ -10,4 +14,16 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   overflow-x: hidden;
+
+  @media screen and (max-width: $lg-breakpoint){
+    font-size: 57.5%;
+  }
+
+  @media screen and (max-width: $md-breakpoint){
+    font-size: 55%;
+  }
+
+  @media screen and (max-width: $sm-breakpoint){
+    font-size: 50%;
+  }
 }

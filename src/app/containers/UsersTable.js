@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import usePages from "../hooks/pagesHook";
+import Page from "../layout/Page";
 import Table from "../components/table/Table";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
@@ -20,7 +21,7 @@ const UsersTable = ({
   const { loaded, loading, error, users, pages } = usePages(page);
 
   return (
-    <div>
+    <Page>
       <Breadcrumbs>
         <Link to="/">Main Page</Link>
         <Link to="/users">User Statistics</Link>
@@ -45,7 +46,7 @@ const UsersTable = ({
           onPage={page => push({ search: `?page=${page}` })}
         />
       )}
-    </div>
+    </Page>
   );
 };
 

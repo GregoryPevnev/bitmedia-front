@@ -6,6 +6,8 @@
 
   &__header {
     flex: 0 0 auto;
+    background: $primary;
+    color: $white;
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -17,6 +19,8 @@
 
   &__footer {
     flex: 0 0 auto;
+    background: $dark;
+    color: $light;
     width: 100%;
     margin-top: 1rem;
   }
