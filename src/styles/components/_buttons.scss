@@ -7,9 +7,19 @@
   border-radius: 8px;
   color: $white;
   outline: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: darken($primary, 10%);
+  }
 
   &--primary {
     background: $white;
     color: $primary;
+
+    &:hover {
+      background: darken($white, 10%);
+    }
   }
 }

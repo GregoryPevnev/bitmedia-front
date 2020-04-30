@@ -9,10 +9,6 @@ $hero-breakpoint: 960px;
     max-height: 68rem;
   }
 
-  &__content {
-    @include container;
-  }
-
   &__footer {
     color: $white;
   }

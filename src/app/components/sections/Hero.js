@@ -3,7 +3,7 @@ import Header from "../../layout/Header";
 import Button from "../common/Button";
 import ImageBackground from "../helpers/ImageBackground";
 import headerBackground from "../../../assets/home-header-bg.svg";
-import mobileImage from "../../../assets/mobile.svg";
+import mobileImage from "../../../assets/mobile.png";
 
 const Hero = () => (
   <ImageBackground image={headerBackground}>
