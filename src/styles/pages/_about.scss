@@ -19,7 +19,7 @@
   &__features {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     @include container;
     margin-bottom: 3.2rem;
   }

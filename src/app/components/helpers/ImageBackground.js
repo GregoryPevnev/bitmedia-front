@@ -1,7 +1,7 @@
 import React from "react";
 
-const ImageBackground = ({ image, children }) => (
-  <div className="image-background">
+const ImageBackground = ({ image, bottom = false, children }) => (
+  <div className={`image-background ${bottom ? "image-background--bottom" : ""}`}>
     <div className="image-background__background">
       <img className="image-background__image" src={image} />
     </div>

@@ -11,5 +11,7 @@ $hero-breakpoint: 960px;
 
   &__footer {
     color: $white;
+    height: 20vh;
+    max-height: 35rem;
   }
 }

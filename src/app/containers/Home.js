@@ -20,7 +20,7 @@ const Home = () => (
     </main>
 
     <footer className="home__footer">
-      <ImageBackground image={footerBackground}>
+      <ImageBackground image={footerBackground} bottom>
         <Footer />
       </ImageBackground>
     </footer>
