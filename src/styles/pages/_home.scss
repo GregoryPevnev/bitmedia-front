@@ -15,12 +15,21 @@
   }
 
   &__content {
-    margin-bottom: 2rem;
+    margin: 2rem;
   }
 
   &__footer {
-    padding: 10rem 0 2.5rem 0;
+    position: relative;
+    padding: 15rem 0 2.5rem 0;
     background: url(../../assets/home-footer-bg.svg);
     @include bg-image;
+  }
+
+  &__subscription {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
   }
 }

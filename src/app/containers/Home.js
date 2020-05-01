@@ -3,6 +3,7 @@ import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Info from "../components/sections/Info";
 import Packages from "../components/sections/Packages";
+import Form from "../components/form/Form";
 import Footer from "../layout/Footer";
 
 const Home = () => (
@@ -18,6 +19,9 @@ const Home = () => (
     </main>
 
     <footer className="home__footer">
+      <div className="home__subscription">
+        <Form />
+      </div>
       <Footer />
     </footer>
   </div>

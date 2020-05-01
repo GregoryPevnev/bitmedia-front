@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  max-width: 60rem;
+  width: 90%;
+  margin: 0 auto;
+  background: $white;
+  padding: 5px;
+  border-radius: 10px;
+
+  &__input {
+    flex: 1 1 auto;
+    font-size: 1.6rem;
+    padding: 1.8rem 1.9rem;
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+
+    &::placeholder {
+      color: #B9B9B9; // TODO: Variable
+    }
+  }
+}
