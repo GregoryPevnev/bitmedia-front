@@ -1,3 +1,5 @@
+$about-breakpoint: 725px;
+
 .about {
   display: block;
   text-align: center;
@@ -18,17 +20,33 @@
 
   &__features {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     @include container;
-    margin-bottom: 3.2rem;
+
+    @media screen and (max-width: $about-breakpoint) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__feature {
-    width: 38rem;
+    width: 80%;
+    max-width: 38rem;
+    margin-bottom: 3.2rem;
 
     &:not(:last-child) {
       margin-right: 2rem;
+    }
+
+    @media screen and (max-width: $about-breakpoint) {
+      max-width: 48rem;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
     }
   }
 }

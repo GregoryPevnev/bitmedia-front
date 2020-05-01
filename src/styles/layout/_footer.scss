@@ -1,5 +1,3 @@
-$footer-breakpoint: 610px;
-
 .footer {
   padding: 1rem 0;
 
@@ -22,7 +20,7 @@ $footer-breakpoint: 610px;
 
     @media screen and (max-width: $footer-breakpoint) {
       &:not(:last-child) {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
       }
     }
   }

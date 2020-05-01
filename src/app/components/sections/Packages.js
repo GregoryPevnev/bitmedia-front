@@ -4,6 +4,7 @@ import Button from "../common/Button";
 import basicImage from "../../../assets/basic.svg";
 import standardImage from "../../../assets/standard.svg";
 import unlimitedImage from "../../../assets/unlimited.svg";
+import Link from "../common/Link";
 
 const Packages = () => (
   <section className="about">
@@ -72,7 +73,7 @@ const Packages = () => (
     </div>
     <p className="about__info">
       If you need custom services or Need more?
-    {/* TODO: Link */}
+      <Link to="/"> Contact Us</Link>
     </p>
   </section>
 );

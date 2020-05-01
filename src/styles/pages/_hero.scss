@@ -13,7 +13,7 @@
 
     @media screen and (max-width: $hero-breakpoint) {
       flex-direction: column;
-
+      padding-bottom: 15rem;
     }
   }
 
@@ -42,5 +42,9 @@
 
   &__image {
     flex: 0 0 auto;
+
+    @media screen and (max-width: $hero-breakpoint) {
+      display: none;
+    }
   }
 }

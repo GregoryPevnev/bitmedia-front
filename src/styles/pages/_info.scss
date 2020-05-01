@@ -1,3 +1,5 @@
+$info-breakpoint: 980px;
+
 .info {
   color: $white;
   width: 100%;
@@ -7,10 +9,14 @@
   // TODO: Variable
   background: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);
 
+  @media screen and (max-width: $info-breakpoint) {
+    height: auto;
+    padding: 3rem 2rem;
+  }
+
   &__content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 
     @include container;
@@ -22,6 +28,10 @@
   }
 
   &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     font-size: 1.6rem;
     margin-bottom: 2.4rem;
   }
@@ -29,5 +39,9 @@
   &__image {
     position: relative;
     top: -27px;
+
+    @media screen and (max-width: $info-breakpoint) {
+      display: none; 
+    }
   }
 }

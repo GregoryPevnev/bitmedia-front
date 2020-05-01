@@ -3,3 +3,8 @@
   width: $row;
   max-width: $row-max;
 }
+
+@mixin bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}

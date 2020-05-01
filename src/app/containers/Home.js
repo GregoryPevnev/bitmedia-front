@@ -3,9 +3,7 @@ import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Info from "../components/sections/Info";
 import Packages from "../components/sections/Packages";
-import ImageBackground from "../components/helpers/ImageBackground";
 import Footer from "../layout/Footer";
-import footerBackground from "../../assets/home-footer-bg.svg";
 
 const Home = () => (
   <div className="home">
@@ -20,9 +18,7 @@ const Home = () => (
     </main>
 
     <footer className="home__footer">
-      <ImageBackground image={footerBackground} bottom>
-        <Footer />
-      </ImageBackground>
+      <Footer />
     </footer>
   </div>
 );

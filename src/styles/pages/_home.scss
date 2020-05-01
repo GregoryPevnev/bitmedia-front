@@ -1,17 +1,26 @@
-$hero-breakpoint: 960px;
-
 .home {
   background: $light;
 
-  &__header {
+  &__header,
+  &__footer {
     color: $white;
-    height: 80vh;
-    max-height: 68rem;
+    width: 100%;
+    height: auto;
+  }
+
+  &__header {
+    background: url(../../assets/home-header-bg.svg);
+    background-position: center;
+    @include bg-image;
+  }
+
+  &__content {
+    margin-bottom: 2rem;
   }
 
   &__footer {
-    color: $white;
-    height: 20vh;
-    max-height: 35rem;
+    padding: 10rem 0 2.5rem 0;
+    background: url(../../assets/home-footer-bg.svg);
+    @include bg-image;
   }
 }

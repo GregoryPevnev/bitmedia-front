@@ -1,6 +1,11 @@
+.btn,
+.link {
+  text-align: center;
+  text-decoration: none;
+}
+
 .btn {
   font-size: 1.6rem;
-  text-align: center;
   padding: 1.7rem 3.5rem;
   background: $primary;
   border: none;
@@ -8,6 +13,7 @@
   color: $white;
   outline: 0;
   cursor: pointer;
+  // TODO: Mixin for animation
   transition: all 0.3s ease;
 
   &:hover {
@@ -21,5 +27,17 @@
     &:hover {
       background: darken($white, 10%);
     }
+  }
+}
+
+.link {
+  color: $primary;
+  font-size: 2rem;
+  line-height: 150%;
+  font-weight: bolder;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: darken($primary, 10%);
   }
 }
