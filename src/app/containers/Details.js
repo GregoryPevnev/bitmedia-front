@@ -8,6 +8,7 @@ import RangeSelector from "../components/range/RangeSelector";
 import Breadcrumbs from "../components/helpers/Breadcrumbs";
 import Graph from "../components/graph/Graph";
 import { DATE_PREFIX, DEFAULT_FROM, DEFAULT_TO, MINIMUM_DATE, MAXIMUM_DATE } from "../components/constants";
+import { queryParams } from "../utils";
 
 const userName = ({ first_name, last_name }) => `${first_name} ${last_name}`;
 
@@ -21,10 +22,18 @@ const Details = ({
     params: {
       id
     }
+  },
+  location: {
+    search
+  },
+  history: {
+    push
   }
 }) => {
+  const { from: fromParam, to: toParam } = queryParams(search, ["from", "to"]);
+  const from = Number(fromParam || DEFAULT_FROM), to = Number(toParam || DEFAULT_TO);
   const details = useDetails(id);
-  const [stats, setRange] = useStats(id, DEFAULT_FROM, DEFAULT_TO);
+  const stats = useStats(id, from, to);
 
   const name = details.user ? userName(details.user) : PLACEHOLDER_USERNAME;
 
@@ -77,10 +86,12 @@ const Details = ({
             <RangeSelector
               min={MINIMUM_DATE}
               max={MAXIMUM_DATE}
-              from={stats.range.from}
-              to={stats.range.to}
+              from={from}
+              to={to}
               prefix={DATE_PREFIX}
-              onSelect={setRange}
+              onSelect={({ from, to }) => {
+                push(`?from=${from}&to=${to}`);
+              }}
             />
           </div>
         </Information>

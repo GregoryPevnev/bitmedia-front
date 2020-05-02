@@ -47,10 +47,12 @@ const Graph = ({ data, startDate, endDate }) => {
     <div className="container">
       <div className="svg-container">
         <svg version="1.1" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="svg-content">
-          <Marks limit={limit} />
           <Dates records={records} />
           {!isEmpty && (
-            <Chart records={records} />
+            <>
+              <Marks limit={limit} />
+              <Chart records={records} />
+            </>
           )}
         </svg>
       </div>

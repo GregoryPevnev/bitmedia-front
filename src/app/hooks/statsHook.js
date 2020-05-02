@@ -5,19 +5,15 @@ import { YEAR, MONTH } from "../components/constants";
 
 const formatDate = date => formatDateFull(YEAR, MONTH, date);
 
-const toDates = ({ from, to }) => ({
+const toDates = (from, to) => ({
   from: formatDate(from),
   to: formatDate(to),
 });
 
-const useStats = (userId, defaultFrom, defaultTo) => {
+const useStats = (userId, from, to) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
-  const [range, setRange] = useState({
-    from: defaultFrom,
-    to: defaultTo,
-  });
 
   const loadStatistic = async () => {
     try {
@@ -25,8 +21,8 @@ const useStats = (userId, defaultFrom, defaultTo) => {
 
       const data = await loadStats(
         userId,
-        formatDate(range.from),
-        formatDate(range.to)
+        formatDate(from),
+        formatDate(to)
       );
 
       setLoading(false);
@@ -40,19 +36,15 @@ const useStats = (userId, defaultFrom, defaultTo) => {
 
   useEffect(() => {
     loadStatistic();
-  }, [range]);
+  }, [from, to]);
 
-  const state = {
+  return {
     loading,
     error,
     data,
 
-    range,
-
-    dates: toDates(range),
+    dates: toDates(from, to),
   };
-
-  return [state, setRange];
 };
 
 export default useStats;

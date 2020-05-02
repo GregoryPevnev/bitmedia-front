@@ -9,7 +9,9 @@ import Information from "../components/helpers/Information";
 import { queryParams } from "../utils";
 
 const Statistic = ({
-  location: { search },
+  location: {
+    search
+  },
   history: {
     push
   }
