@@ -16,8 +16,6 @@ const useTable = items => {
 
       setTimeout(() => {
         headColumns.forEach((headColumn, i) => {
-          console.log(widthOf(bodyColumns[i]));
-
           headColumn.style.width = `${widthOf(bodyColumns[i])}px`;
         });
       }, 0);

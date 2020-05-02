@@ -17,15 +17,17 @@ const RangeSelector = ({
 
   return (
     <div className="range">
-      <p>Statistic from <b>{prefix}</b></p>
+      <p>Statistic from </p>
       <Picker
+        text={prefix}
         min={min}
         max={to - 1}
         value={from}
         onPick={fromValue => pickRange(fromValue, to)}
       />
-      <p> to <b>{prefix}</b></p>
+      <p> to </p>
       <Picker
+        text={prefix}
         min={from + 1}
         max={max}
         value={to}

@@ -52,11 +52,11 @@ const Pager = ({ pages, page, active, onPage }) => {
       />
 
       <div className="pager__pages">
-        {withGaps(pagesList(pages, page)).map(currentPage => (
+        {withGaps(pagesList(pages, page)).map((currentPage, i) => (
           currentPage === null ?
-            <Gap /> :
+            <Gap key={i} /> :
             <Page
-              key={currentPage}
+              key={i}
               isActive={currentPage === page}
               onClick={() => active && onPage(currentPage)}
             >

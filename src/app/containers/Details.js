@@ -7,17 +7,14 @@ import Information from "../components/helpers/Information";
 import RangeSelector from "../components/range/RangeSelector";
 import Breadcrumbs from "../components/helpers/Breadcrumbs";
 import Graph from "../components/graph/Graph";
+import { DATE_PREFIX, DEFAULT_FROM, DEFAULT_TO, MINIMUM_DATE, MAXIMUM_DATE } from "../components/constants";
 
 const userName = ({ first_name, last_name }) => `${first_name} ${last_name}`;
 
 const toClicks = records => records.map(({ date, clicks }) => ({ date, value: clicks }));
 const toViews = records => records.map(({ date, views }) => ({ date, value: views }));
 
-// TODO: Application Settings and Constants
-const DEFAULT_FROM = 24;
-const DEFAULT_TO = 30;
 const PLACEHOLDER_USERNAME = "User Details";
-const DATE_PREFIX = "2019-10-";
 
 const Details = ({
   match: {
@@ -78,14 +75,16 @@ const Details = ({
             </Information>
           </div>
 
-          <RangeSelector
-            min={1}
-            max={30}
-            from={stats.range.from}
-            to={stats.range.to}
-            prefix={DATE_PREFIX}
-            onSelect={setRange}
-          />
+          <div className="details__controls">
+            <RangeSelector
+              min={MINIMUM_DATE}
+              max={MAXIMUM_DATE}
+              from={stats.range.from}
+              to={stats.range.to}
+              prefix={DATE_PREFIX}
+              onSelect={setRange}
+            />
+          </div>
         </Information>
       </div>
     </Page>

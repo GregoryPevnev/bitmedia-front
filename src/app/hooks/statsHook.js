@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { loadStats } from "../api";
-import { formatDate } from "../utils";
+import { formatDate as formatDateFull } from "../utils";
+import { YEAR, MONTH } from "../components/constants";
 
-const YEAR = "2019";
-const MONTH = "10";
+const formatDate = date => formatDateFull(YEAR, MONTH, date);
 
 const toDates = ({ from, to }) => ({
-  from: formatDate(YEAR, MONTH, from),
-  to: formatDate(YEAR, MONTH, to),
+  from: formatDate(from),
+  to: formatDate(to),
 });
 
 const useStats = (userId, defaultFrom, defaultTo) => {
@@ -25,8 +25,8 @@ const useStats = (userId, defaultFrom, defaultTo) => {
 
       const data = await loadStats(
         userId,
-        formatDate(YEAR, MONTH, range.from),
-        formatDate(YEAR, MONTH, range.to)
+        formatDate(range.from),
+        formatDate(range.to)
       );
 
       setLoading(false);

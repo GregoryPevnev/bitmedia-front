@@ -13,8 +13,7 @@
   color: $white;
   outline: 0;
   cursor: pointer;
-  // TODO: Mixin for animation
-  transition: all 0.3s ease;
+  @include animated;
 
   &:hover {
     background: darken($primary, 10%);
@@ -35,7 +34,7 @@
   font-size: 2rem;
   line-height: 150%;
   font-weight: bolder;
-  transition: all 0.3s ease;
+  @include animated;
 
   &:hover {
     color: darken($primary, 10%);

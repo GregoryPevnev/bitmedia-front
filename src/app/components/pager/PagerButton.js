@@ -18,8 +18,8 @@ const PagerButton = ({ back = false, active = false, onClick }) => (
       <path
         d={back ? LEFT_ARROW_PATH : RIGHT_ARROW_PATH}
         stroke={active ? ACTIVE_COLOR : INACTIVE_COLOR}
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
     </svg>
   </div>

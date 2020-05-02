@@ -9,7 +9,7 @@
   }
 
   &__table {
-    border-radius: 12.5px; // TODO: Variable
+    border-radius: $table-radius;
     overflow: auto;
     width: 100%;
     margin-bottom: 3rem;

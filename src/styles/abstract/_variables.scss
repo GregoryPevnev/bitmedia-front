@@ -1,5 +1,6 @@
 // Colors
 $primary: #3A80BA;
+$danger: #e74c3c;
 
 $light: #FAFAFA;
 $dark: #1C3B55;
@@ -8,11 +9,16 @@ $black: #1A1A1A;
 $white: #FFF;
 $gray: #7E7E7E;
 
+$placeholder: #B9B9B9;
+
+$primary-gradient: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);
+
 // Measures
 $row-max: 1224px;
 
 $row: 95%;
 
+$table-radius: 12.5px;
 
 // Breakpoints
 

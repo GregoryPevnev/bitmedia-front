@@ -29,7 +29,7 @@ $pager-breakpoint: 870px;
     border: 2px solid #F1F1F1;
     border-radius: 8px;
     padding: 1.4rem 1.9rem;
-    transition: all 0.3s ease;
+    @include animated;
     cursor: pointer;
   }
 

@@ -8,7 +8,7 @@ $cell-space: 2.4rem;
 .table {
   background: #F1F1F1;
   border-collapse: collapse;
-  border-radius: 12.5px; // TODO: Variable
+  border-radius: $table-radius;
   overflow: hidden;
   
   th, td {
@@ -45,7 +45,7 @@ $cell-space: 2.4rem;
     tr{
       background: #F1F1F1;
       cursor: pointer;
-      transition: all 0.3s ease;
+      @include animated;
 
       &:nth-child(odd) {
         background: #FBFBFB

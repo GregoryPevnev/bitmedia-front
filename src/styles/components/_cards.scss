@@ -8,8 +8,7 @@
   padding: 5rem;
   background: $white;
   border-radius: 32px;
-  // TODO: Variable / Function / Mixin
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  @include shadow;
 
   &__title {
     text-align: center;

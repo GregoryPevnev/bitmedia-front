@@ -17,7 +17,7 @@
     margin-right: 1rem;
 
     &::placeholder {
-      color: #B9B9B9; // TODO: Variable
+      color: $placeholder; 
     }
   }
 }

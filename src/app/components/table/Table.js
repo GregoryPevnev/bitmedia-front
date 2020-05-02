@@ -1,6 +1,6 @@
 import React from "react";
 import Row from "./Row";
-import useTable from "./hooks/useTable";
+import useTable from "./hooks/tableHook";
 
 const Table = ({ users, onSelect }) => {
   const { headRef, bodyRef } = useTable(users);
