@@ -1,3 +1,8 @@
+$table-breakpoint-lg: 850px;
+$table-breakpoint-md: 750px;
+
+$table-breakpoint-mobile: 480px;
+
 $cell-space: 2.4rem;
 
 .table {
@@ -31,6 +36,10 @@ $cell-space: 2.4rem;
 
     td {
       padding: 0.6rem $cell-space;
+      
+      @media screen and (max-width: $table-breakpoint-mobile) {
+        padding: 1.6rem $cell-space;
+      }
     }
 
     tr{
@@ -46,6 +55,14 @@ $cell-space: 2.4rem;
         background: $primary;
         color: $white;
       }
+    }
+
+    @media screen and (max-height: $table-breakpoint-lg) {
+      max-height: 360px;
+    }
+
+    @media screen and (max-height: $table-breakpoint-md) {
+      max-height: 240px;
     }
   }
 }

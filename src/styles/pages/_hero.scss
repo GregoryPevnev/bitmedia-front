@@ -13,7 +13,11 @@
 
     @media screen and (max-width: $hero-breakpoint) {
       flex-direction: column;
-      padding-bottom: 15rem;
+      padding-bottom: 12rem;
+    }
+
+    @media screen and (max-width: $hero-breakpoint-xs) {
+      padding-bottom: 18rem;
     }
   }
 
