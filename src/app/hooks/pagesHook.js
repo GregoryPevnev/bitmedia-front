@@ -18,14 +18,15 @@ const usePages = page => {
         users: newUsers,
       } = await loadUsers(page);
 
-      setLoading(false);
       setLoaded(true);
+      setLoading(false);
 
       setError(null);
 
       setPages(newPages);
       setUsers(newUsers);
     } catch (e) {
+      setLoaded(true);
       setLoading(false);
 
       setError(e.message);

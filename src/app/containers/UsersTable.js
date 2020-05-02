@@ -27,25 +27,27 @@ const UsersTable = ({
         <Link to="/users">User Statistics</Link>
       </Breadcrumbs>
 
-      <h2>Users</h2>
+      <div className="users">
+        <h2 className="heading">Users statistic</h2>
 
-      <div>
-        {/* TODO: Static height */}
-        <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
+        <div className="users__table">
+          {/* TODO: Static height */}
+          <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
 
-        {/* TODO: Absolute position over */}
-        {!loaded && <Loading />}
+          {/* TODO: Absolute position over */}
+          {!loaded && <Loading />}
+        </div>
+        {error && <Error>{error}</Error>}
+        {(loaded && loading) && <p>Loading...</p>}
+
+        {loaded && (
+          <Pager
+            page={page}
+            pages={pages}
+            onPage={page => push({ search: `?page=${page}` })}
+          />
+        )}
       </div>
-      {error && <Error>{error}</Error>}
-      {(loaded && loading) && <p>Loading...</p>}
-
-      {loaded && (
-        <Pager
-          page={page}
-          pages={pages}
-          onPage={page => push({ search: `?page=${page}` })}
-        />
-      )}
     </Page>
   );
 };
