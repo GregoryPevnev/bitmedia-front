@@ -40,6 +40,7 @@ const toValues = (values, start, end) => {
 };
 
 const Graph = ({ data, startDate, endDate }) => {
+  const isEmpty = !data || data.length === 0;
   const { records, limit } = toValues(data, startDate, endDate);
 
   return (
@@ -48,7 +49,9 @@ const Graph = ({ data, startDate, endDate }) => {
         <svg version="1.1" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="svg-content">
           <Marks limit={limit} />
           <Dates records={records} />
-          <Chart records={records} />
+          {!isEmpty && (
+            <Chart records={records} />
+          )}
         </svg>
       </div>
     </div>

@@ -35,7 +35,6 @@ const Statistic = ({
           <Information
             loading={loading}
             error={error}
-            loaded={users.length > 0}
           >
             <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
           </Information>

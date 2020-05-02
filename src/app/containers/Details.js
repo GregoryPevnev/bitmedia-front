@@ -49,7 +49,6 @@ const Details = ({
             <Information
               loading={stats.loading}
               error={stats.error}
-              loaded={stats.data.length > 0}
             >
               <Graph
                 data={toClicks(stats.data)}
@@ -65,7 +64,6 @@ const Details = ({
             <Information
               loading={stats.loading}
               error={stats.error}
-              loaded={stats.data.length > 0}
             >
               <Graph
                 data={toViews(stats.data)}

@@ -5,7 +5,6 @@ import Error from "../common/Error";
 const Information = ({
   loading,
   error,
-  loaded,
   children
 }) => (
     <div className="information">
@@ -19,11 +18,9 @@ const Information = ({
         </div>
       )}
 
-      {loaded && (
-        <div className="information__content">
-          {children}
-        </div>
-      )}
+      <div className="information__content">
+        {children}
+      </div>
     </div>
   );
 
