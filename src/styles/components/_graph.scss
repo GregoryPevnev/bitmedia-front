@@ -1,0 +1,50 @@
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 25%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.line {
+  stroke: #F1F1F1;
+  stroke-width: 2;
+}
+
+.line--thick {
+  stroke-width: 3;
+}
+
+.label {
+  fill: #CCC;
+  /* Not Pixels - Points in the view-box */
+  font: normal 20px sans-serif;
+}
+
+.label--vertical {
+  /* Aligning in the end of assigned position (Right-Alignment) */
+  text-anchor: end;
+}
+
+.label--horizontal {
+  /* Aligning text in the center of the position it was assigned */
+  text-anchor: middle;
+}
+
+.point {
+  fill: #3A80BA;
+}
+
+.graph {
+  fill: transparent;
+  stroke: #3A80BA;
+  stroke-width: 4;
+}

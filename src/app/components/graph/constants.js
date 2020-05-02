@@ -1,6 +1,6 @@
 // Measures
 export const WIDTH = 1000;
-export const HEIGHT = 500;
+export const HEIGHT = 250;
 
 // 80%
 export const X_AXIS = WIDTH / 100 * 80;

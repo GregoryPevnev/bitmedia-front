@@ -27,11 +27,7 @@ export const loadUser = async userId => {
     if (!data.user)
       throw { message: "User not found" };
 
-    return new Promise((res) => {
-      setTimeout(() => {
-        res(data.user);
-      }, 3000);
-    });
+    return data.user;
   } catch (e) {
     if (e.message) throw e;
 

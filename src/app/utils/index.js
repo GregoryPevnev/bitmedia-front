@@ -10,3 +10,11 @@ export const range = (min, max) => {
 
   return values;
 };
+
+export const stripPadding = date => {
+  let i = 0;
+
+  while (i < date.length && date[i] === "0") i++;
+
+  return date.slice(i);
+};

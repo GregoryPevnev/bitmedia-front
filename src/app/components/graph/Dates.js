@@ -1,4 +1,5 @@
 import React from "react";
+import { stripPadding } from "../../utils";
 
 const dateStep = dates => {
   if (dates <= 7) return 1;
@@ -32,7 +33,7 @@ const dateLabelPosition = (totalDates, index) =>
   `${10 + 80 / (totalDates - 1) * index}%`;
 
 const formatDate = date =>
-  `${date.split("-")[2]}th`;
+  `${stripPadding(date.split("-")[2])}th`;
 
 const Dates = ({ records }) => {
   const dates = selectDates(records);

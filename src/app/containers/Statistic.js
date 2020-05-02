@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 import usePages from "../hooks/pagesHook";
 import Page from "../layout/Page";
 import Table from "../components/table/Table";
-import Loading from "../components/common/Loading";
-import Error from "../components/common/Error";
 import Pager from "../components/pager/Pager";
-import Breadcrumbs from "../components/navigation/Breadcrumbs";
-import { queryParams } from "../utils";
+import Breadcrumbs from "../components/helpers/Breadcrumbs";
 import Information from "../components/helpers/Information";
+import { queryParams } from "../utils";
 
 const Statistic = ({
   location: { search },
