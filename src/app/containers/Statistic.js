@@ -8,6 +8,7 @@ import Error from "../components/common/Error";
 import Pager from "../components/pager/Pager";
 import Breadcrumbs from "../components/navigation/Breadcrumbs";
 import { queryParams } from "../utils";
+import Information from "../components/helpers/Information";
 
 const Statistic = ({
   location: { search },
@@ -29,19 +30,17 @@ const Statistic = ({
 
       <div className="statistic">
         <div className="statistic__head">
-          <h2 className="heading">Users statistic</h2>
+          <h2 className="heading">Users statistics</h2>
         </div>
 
-        {/* TODO: Info-Component */}
         <div className="statistic__table">
-          {/* TODO: Static height */}
-          <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
-
-          {/* TODO: Absolute position over */}
-          {loading && <Loading />}
-
-          {/* TODO: Right under */}
-          {error && <Error>{error}</Error>}
+          <Information
+            loading={loading}
+            error={error}
+            loaded={users.length > 0}
+          >
+            <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
+          </Information>
         </div>
         <div className="statistic__pager">
           {(pages > 0) && (

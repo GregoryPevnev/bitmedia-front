@@ -1,7 +1,7 @@
 import React from "react";
 
 const Error = ({ children }) => (
-  <div>
+  <div className="error">
     <p>{children}</p>
   </div>
 );

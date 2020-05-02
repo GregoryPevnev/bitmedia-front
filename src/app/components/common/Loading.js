@@ -1,8 +1,9 @@
 import React from "react";
 
 const Loading = () => (
-  <div>
-    <p>Loading...</p>
+  <div className="loading">
+    <div className="loading__loader"></div>
+    <p className="loading__text">Loading...</p>
   </div>
 );
 

@@ -1,0 +1,19 @@
+.loading {
+  margin-bottom: 2rem;
+
+  &__loader {
+    border: 5px solid $white;
+    border-top-color: $primary;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    animation: rotation 1s infinite;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    text-align: center;
+    font-style: italic;
+  }
+}

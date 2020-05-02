@@ -10,15 +10,11 @@ export const loadUsers = async page => {
       }
     });
 
-    return new Promise((res) => {
-      setTimeout(() => {
-        res({
-          users: data.users,
-          page: data.page,
-          pages: data.pages,
-        });
-      }, 3000);
-    });
+    return {
+      users: data.users,
+      page: data.page,
+      pages: data.pages,
+    };
   } catch (e) {
     throw { message: "Could not load users" };
   }
