@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { loadStats } from "../api";
-import { formatDate } from "../utils/dates";
+import { formatDate } from "../utils";
 
 const YEAR = "2019";
 const MONTH = "10";

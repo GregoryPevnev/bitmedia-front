@@ -3,7 +3,7 @@ import Marks from "./Marks";
 import Dates from "./Dates";
 import Chart from "./Chart";
 import { WIDTH, HEIGHT } from "./constants";
-import { dateToTime, timeToDate } from "../../utils/dates";
+import { dateToTime, timeToDate } from "../../utils";
 
 const percentageFrom = (value, maximum) => {
   if (!value) return 0;

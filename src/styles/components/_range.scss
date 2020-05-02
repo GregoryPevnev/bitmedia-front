@@ -1,0 +1,25 @@
+$range-breakpoint: 480px;
+
+.range {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+
+  &__input {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    color: $white;
+    background: $primary;
+    border: none;
+  }
+
+  @media screen and (max-width: $range-breakpoint) {
+    font-size: 1.6rem;
+
+    &__input {
+      font-size: 1.6rem;
+    }
+  }
+}

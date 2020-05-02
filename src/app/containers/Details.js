@@ -17,6 +17,7 @@ const toViews = records => records.map(({ date, views }) => ({ date, value: view
 const DEFAULT_FROM = 24;
 const DEFAULT_TO = 30;
 const PLACEHOLDER_USERNAME = "User Details";
+const DATE_PREFIX = "2019-10-";
 
 const Details = ({
   match: {
@@ -82,6 +83,7 @@ const Details = ({
             max={30}
             from={stats.range.from}
             to={stats.range.to}
+            prefix={DATE_PREFIX}
             onSelect={setRange}
           />
         </Information>

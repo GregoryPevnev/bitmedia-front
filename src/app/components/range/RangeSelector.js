@@ -1,7 +1,14 @@
 import React from "react";
 import Picker from "./Picker";
 
-const RangeSelector = ({ min, max, from, to, onSelect }) => {
+const RangeSelector = ({
+  min,
+  max,
+  from,
+  to,
+  prefix,
+  onSelect
+}) => {
   const pickRange = (fromValue, toValue) =>
     onSelect({
       from: Math.max(min, fromValue),
@@ -9,13 +16,15 @@ const RangeSelector = ({ min, max, from, to, onSelect }) => {
     });
 
   return (
-    <div>
+    <div className="range">
+      <p>Statistic from <b>{prefix}</b></p>
       <Picker
         min={min}
         max={to - 1}
         value={from}
         onPick={fromValue => pickRange(fromValue, to)}
       />
+      <p> to <b>{prefix}</b></p>
       <Picker
         min={from + 1}
         max={max}

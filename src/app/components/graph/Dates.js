@@ -1,5 +1,5 @@
 import React from "react";
-import { stripPadding } from "../../utils";
+import { stringDate } from "../../utils";
 
 const dateStep = dates => {
   if (dates <= 7) return 1;
@@ -32,9 +32,6 @@ const dateLabelPosition = (totalDates, index) =>
   // Calculating SPACE BETWEEN -> Subtracting 1
   `${10 + 80 / (totalDates - 1) * index}%`;
 
-const formatDate = date =>
-  `${stripPadding(date.split("-")[2])}th`;
-
 const Dates = ({ records }) => {
   const dates = selectDates(records);
 
@@ -42,7 +39,7 @@ const Dates = ({ records }) => {
     <g className="label label--horizontal" id="dates">
       {dates.map((date, index) => (
         <text key={date} x={dateLabelPosition(dates.length, index)} y="100%">
-          {formatDate(date)}
+          {stringDate(date)}
         </text>
       ))}
     </g>

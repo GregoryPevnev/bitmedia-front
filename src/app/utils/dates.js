@@ -9,3 +9,26 @@ export const timeToDate = time => {
 
   return formatDate(date.getFullYear(), date.getMonth() + 1, date.getDate());
 };
+
+const SUFFIXES = {
+  "1": "st",
+  "2": "nd",
+  "3": "rd"
+};
+
+const dateSuffix = date => {
+  if (SUFFIXES[date]) return `${date}${SUFFIXES[date]}`;
+
+  return `${date}th`;
+};
+
+const stripPadding = date => {
+  let i = 0;
+
+  while (i < date.length && date[i] === "0") i++;
+
+  return date.slice(i);
+};
+
+export const stringDate = date =>
+  dateSuffix(stripPadding(date.split("-")[2]));
