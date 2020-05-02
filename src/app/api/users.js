@@ -10,11 +10,15 @@ export const loadUsers = async page => {
       }
     });
 
-    return {
-      users: data.users,
-      page: data.page,
-      pages: data.pages,
-    };
+    return new Promise((res) => {
+      setTimeout(() => {
+        res({
+          users: data.users,
+          page: data.page,
+          pages: data.pages,
+        });
+      }, 3000);
+    });
   } catch (e) {
     throw { message: "Could not load users" };
   }
@@ -27,7 +31,11 @@ export const loadUser = async userId => {
     if (!data.user)
       throw { message: "User not found" };
 
-    return data.user;
+    return new Promise((res) => {
+      setTimeout(() => {
+        res(data.user);
+      }, 3000);
+    });
   } catch (e) {
     if (e.message) throw e;
 

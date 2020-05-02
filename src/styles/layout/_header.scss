@@ -1,5 +1,6 @@
 .header {
   &__container {
+    padding: 0.4rem 0;
     @include container;
   }
 

@@ -39,15 +39,15 @@ const withGaps = pages =>
     return [...preparedPages, page];
   }, []);
 
-const Pager = ({ pages, page, onPage }) => {
+const Pager = ({ pages, page, active, onPage }) => {
   const isFirst = page === 1;
   const isLast = page === pages;
 
   return (
-    <div className="pager">
+    <div className={`pager ${active ? "pager--active" : ""}`}>
       <PageButton
         back
-        active={!isFirst}
+        active={!isFirst && active}
         onClick={() => onPage(page - 1)}
       />
 
@@ -58,7 +58,7 @@ const Pager = ({ pages, page, onPage }) => {
             <Page
               key={currentPage}
               isActive={currentPage === page}
-              onClick={() => onPage(currentPage)}
+              onClick={() => active && onPage(currentPage)}
             >
               {currentPage}
             </Page>
@@ -66,7 +66,7 @@ const Pager = ({ pages, page, onPage }) => {
       </div>
 
       <PageButton
-        active={!isLast}
+        active={!isLast && active}
         onClick={() => onPage(page + 1)}
       />
     </div>

@@ -18,7 +18,7 @@ const Statistic = ({
   const { page: pageNumber } = queryParams(search, ["page"]);
   const page = Number(pageNumber || 1);
 
-  const { loaded, loading, error, users, pages } = usePages(page);
+  const { loading, error, users, pages } = usePages(page);
 
   return (
     <Page>
@@ -28,7 +28,9 @@ const Statistic = ({
       </Breadcrumbs>
 
       <div className="statistic">
-        <h2 className="heading">Users statistic</h2>
+        <div className="statistic__head">
+          <h2 className="heading">Users statistic</h2>
+        </div>
 
         {/* TODO: Info-Component */}
         <div className="statistic__table">
@@ -36,16 +38,17 @@ const Statistic = ({
           <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
 
           {/* TODO: Absolute position over */}
-          {!loaded && <Loading />}
+          {loading && <Loading />}
 
           {/* TODO: Right under */}
           {error && <Error>{error}</Error>}
         </div>
         <div className="statistic__pager">
-          {loaded && (
+          {(pages > 0) && (
             <Pager
               page={page}
               pages={pages}
+              active={!loading}
               onPage={page => push({ search: `?page=${page}` })}
             />
           )}

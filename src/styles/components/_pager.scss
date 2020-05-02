@@ -31,13 +31,13 @@ $pager-breakpoint: 870px;
     padding: 1.4rem 1.9rem;
     transition: all 0.3s ease;
     cursor: pointer;
+  }
 
-    &--active,
-    &:hover {
-      color: $white;
-      background: $primary;
-      border-color: $primary;
-    }
+  .pager__btn--active,
+  &--active .pager__btn:hover {
+    color: $white;
+    background: $primary;
+    border-color: $primary;
   }
 
   @media screen and (max-width: $pager-breakpoint) {

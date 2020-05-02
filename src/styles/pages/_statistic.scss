@@ -2,15 +2,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
+
+  &__head {
+    align-self: stretch;
+  }
 
   &__table {
-    overflow: scroll;
+    border-radius: 12.5px; // TODO: Variable
+    overflow: auto;
     margin-bottom: 3rem;
+    max-width: 100%;
   }
 
   &__pager {
-    align-self: center;
     margin-bottom: 2.4rem;
   }
 }

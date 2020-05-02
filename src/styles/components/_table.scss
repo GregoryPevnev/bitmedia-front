@@ -1,10 +1,12 @@
 $cell-space: 2.4rem;
 
 .table {
+  height: 560px;
+  background: #F1F1F1;
   border-collapse: collapse;
-  border-radius: 15px; // TODO: Variable
+  border-radius: 12.5px; // TODO: Variable
   overflow: hidden;
-
+  
   th, td {
     font-size: 1.6rem;
     font-weight: lighter;
@@ -25,7 +27,7 @@ $cell-space: 2.4rem;
   tbody {
     display: block;
     width: 100%;
-    height: 500px;
+    height: 100%;
     overflow: scroll;
 
     td {
@@ -34,9 +36,16 @@ $cell-space: 2.4rem;
 
     tr{
       background: #F1F1F1;
+      cursor: pointer;
+      transition: all 0.3s ease;
 
       &:nth-child(odd) {
         background: #FBFBFB
+      }
+
+      &:hover {
+        background: $primary;
+        color: $white;
       }
     }
   }
