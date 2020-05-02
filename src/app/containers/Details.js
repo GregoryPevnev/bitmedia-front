@@ -6,7 +6,7 @@ import Page from "../layout/Page";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
 import RangeSelector from "../components/range/RangeSelector";
-import Breadcrumbs from "../components/navigation/Breadcrums";
+import Breadcrumbs from "../components/navigation/Breadcrumbs";
 import Graph from "../components/graph/Graph";
 
 const userName = ({ first_name, last_name }) => `${first_name} ${last_name}`;

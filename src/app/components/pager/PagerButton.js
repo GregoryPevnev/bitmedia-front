@@ -7,7 +7,7 @@ const RIGHT_ARROW_PATH = "M2 2L14 14L2 26";
 const LEFT_ARROW_PATH = "M15 2L3 14L15 26";
 
 const PagerButton = ({ back = false, active = false, onClick }) => (
-  <div className="pager__arrow" onClick={() => onClick && onClick()}>
+  <div className="pager__arrow" onClick={() => (onClick && active) && onClick()}>
     <svg
       width={20}
       height={28}

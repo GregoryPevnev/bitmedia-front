@@ -1,0 +1,23 @@
+.breadcrumbs {
+  display: flex;
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
+
+  &__path {
+    display: flex;
+  }
+
+  a,
+  &__separator {
+    text-decoration: none;
+    color: #CCCCCC;
+  }
+
+  &__separator {
+    margin: 0 0.8rem;
+  }
+
+  a:last-child {
+    color: $primary;
+  }
+}

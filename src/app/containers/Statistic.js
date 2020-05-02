@@ -6,7 +6,7 @@ import Table from "../components/table/Table";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
 import Pager from "../components/pager/Pager";
-import Breadcrumbs from "../components/navigation/Breadcrums";
+import Breadcrumbs from "../components/navigation/Breadcrumbs";
 import { queryParams } from "../utils";
 
 const Statistic = ({
@@ -30,16 +30,17 @@ const Statistic = ({
       <div className="statistic">
         <h2 className="heading">Users statistic</h2>
 
+        {/* TODO: Info-Component */}
         <div className="statistic__table">
           {/* TODO: Static height */}
           <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
 
           {/* TODO: Absolute position over */}
           {!loaded && <Loading />}
-        </div>
-        {error && <Error>{error}</Error>}
-        {(loaded && loading) && <p>Loading...</p>}
 
+          {/* TODO: Right under */}
+          {error && <Error>{error}</Error>}
+        </div>
         <div className="statistic__pager">
           {loaded && (
             <Pager
