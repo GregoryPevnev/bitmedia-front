@@ -1,0 +1,16 @@
+.statistic {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+
+  &__table {
+    overflow: scroll;
+    margin-bottom: 3rem;
+  }
+
+  &__pager {
+    align-self: center;
+    margin-bottom: 2.4rem;
+  }
+}

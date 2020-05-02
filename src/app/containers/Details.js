@@ -14,7 +14,7 @@ const userName = ({ first_name, last_name }) => `${first_name} ${last_name}`;
 const toClicks = records => records.map(({ date, clicks }) => ({ date, value: clicks }));
 const toViews = records => records.map(({ date, views }) => ({ date, value: views }));
 
-const UserDetails = ({
+const Details = ({
   match: {
     params: {
       id
@@ -82,4 +82,4 @@ const UserDetails = ({
   return null;
 };
 
-export default UserDetails;
+export default Details;

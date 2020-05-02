@@ -1,14 +1,16 @@
 import React from "react";
 import Page from "./Page";
+import Gap from "./Gap";
 import PageButton from "./PagerButton";
 import { dedupliate } from "../../utils";
 
-const RANGE = 3;
+const EDGE_RANGE = 2;
+const MID_RANGE = 1;
 
-const pagesAround = page => {
+const pagesAround = (page, range) => {
   const pages = [];
 
-  for (let i = page - RANGE; i <= page + RANGE; i++)
+  for (let i = page - range; i <= page + range; i++)
     pages.push(i);
 
   return pages;
@@ -16,9 +18,9 @@ const pagesAround = page => {
 
 const pagesList = (pages, page) => {
   const list = dedupliate([
-    ...pagesAround(1),
-    ...pagesAround(page),
-    ...pagesAround(pages)
+    ...pagesAround(1, EDGE_RANGE),
+    ...pagesAround(page, MID_RANGE),
+    ...pagesAround(pages, EDGE_RANGE),
   ]);
 
   return list.filter(
@@ -42,29 +44,31 @@ const Pager = ({ pages, page, onPage }) => {
   const isLast = page === pages;
 
   return (
-    <div>
-      {/* TODO: SVG */}
+    <div className="pager">
       <PageButton
-        isActive={!isFirst}
+        back
+        active={!isFirst}
         onClick={() => onPage(page - 1)}
-      >Prev
-      </PageButton>
+      />
 
-      <div>
-        {withGaps(pagesList(pages, page)).map((page, i) => (
-          page === null ?
-            // TODO: Gap with Input (if enough time)
-            <Page key={`gap-${i}`} onClick={console.log}>...</Page> :
-            <Page key={page} onClick={() => onPage(page)}>{page}</Page>
+      <div className="pager__pages">
+        {withGaps(pagesList(pages, page)).map(currentPage => (
+          currentPage === null ?
+            <Gap /> :
+            <Page
+              key={currentPage}
+              isActive={currentPage === page}
+              onClick={() => onPage(currentPage)}
+            >
+              {currentPage}
+            </Page>
         ))}
       </div>
 
       <PageButton
-        isActive={!isLast}
+        active={!isLast}
         onClick={() => onPage(page + 1)}
-      >
-        Next
-      </PageButton>
+      />
     </div>
   );
 };

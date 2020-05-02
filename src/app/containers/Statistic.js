@@ -9,7 +9,7 @@ import Pager from "../components/pager/Pager";
 import Breadcrumbs from "../components/navigation/Breadcrums";
 import { queryParams } from "../utils";
 
-const UsersTable = ({
+const Statistic = ({
   location: { search },
   history: {
     push
@@ -27,10 +27,10 @@ const UsersTable = ({
         <Link to="/users">User Statistics</Link>
       </Breadcrumbs>
 
-      <div className="users">
+      <div className="statistic">
         <h2 className="heading">Users statistic</h2>
 
-        <div className="users__table">
+        <div className="statistic__table">
           {/* TODO: Static height */}
           <Table users={users} onSelect={userId => push({ pathname: `/users/${userId}` })} />
 
@@ -40,16 +40,18 @@ const UsersTable = ({
         {error && <Error>{error}</Error>}
         {(loaded && loading) && <p>Loading...</p>}
 
-        {loaded && (
-          <Pager
-            page={page}
-            pages={pages}
-            onPage={page => push({ search: `?page=${page}` })}
-          />
-        )}
+        <div className="statistic__pager">
+          {loaded && (
+            <Pager
+              page={page}
+              pages={pages}
+              onPage={page => push({ search: `?page=${page}` })}
+            />
+          )}
+        </div>
       </div>
     </Page>
   );
 };
 
-export default UsersTable;
+export default Statistic;
